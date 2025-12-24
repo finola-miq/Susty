@@ -1,0 +1,433 @@
+/* ------------------------------
+   Base Styles
+   ------------------------------ */
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #e0f7fa;
+    overflow-x: hidden;
+    transition: background 0.5s;
+}
+
+header {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: url('assets/background.png') no-repeat center center;
+    background-size: cover;
+    z-index: 1000;
+    display: none;
+    /* Shown on instructions & interactive screens */
+    border: none;
+    /* Remove any default border if needed */
+}
+
+header button {
+    padding: 15px 25px;
+    font-size: 18px;
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+
+header button:hover {
+    transform: scale(1.1);
+    background-color: #004d40;
+}
+
+/* ------------------------------
+   Start Screen
+   ------------------------------ */
+
+#start-screen {
+    position: relative;
+    /* Establishes a positioning context */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('assets/StartScreen.png') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    animation: fadeIn 1s forwards;
+}
+
+#start-screen button {
+    position: absolute;
+    /* Positions the button relative to #start-screen */
+    bottom: 40px;
+    /* Adjust distance from the bottom */
+    right: 40px;
+    /* Adjust distance from the right */
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    /* Increased font size for a bigger appearance */
+    padding: 25px 50px;
+    /* Increased padding */
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#start-screen button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------------------
+   Instruction Container
+   ------------------------------ */
+
+#instruction-container {
+    display: none;
+    height: 100vh;
+    background: #e0f7fa;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 1s forwards;
+}
+
+.instruction-screen {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.instruction-screen img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+
+#instruction-nav {
+    position: relative;
+    width: 100%;
+    height: 0;
+}
+
+#instruction-back {
+    left: 40px;
+}
+
+#instruction-next {
+    right: 40px;
+}
+
+#instruction-nav button {
+    position: absolute;
+    bottom: 40px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.5rem;
+    padding: 25px 50px;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#instruction-nav button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------------------
+   Trying new class for instruction buttons
+   ------------------------------ */
+
+.instruction-btn {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.5rem;
+    padding: 25px 50px;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.instruction-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------------------
+   Main Interactive Screen
+   ------------------------------ */
+
+#main-screen {
+    display: none;
+    height: 100vh;
+    overflow-y: auto;
+    animation: fadeIn 0.5s forwards;
+}
+
+/* ------------------------------
+   Controls: Add/Remove Card Buttons
+   ------------------------------ */
+
+#controls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#controls button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 0 10px;
+    /* The default background can be overridden by individual button styles below */
+    background: linear-gradient(45deg, #26a69a, #00796b);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#controls button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific styles for each control button */
+
+#controls #add-card {
+    background: #B0BD5E;
+}
+
+#controls #remove-card {
+    background: #EA5F57;
+}
+
+/* ------------------------------
+   Scenario Pages
+   ------------------------------ */
+
+.scenario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    /* This pushes all the content down */
+}
+
+.transparent-overlay {
+    position: absolute;
+    top: 200px;
+    /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80%;
+    height: auto;
+    opacity: 0.35;
+}
+
+#scenario1-page,
+#scenario2-page {
+    height: calc(100vh - 80px);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('assets/background.png') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#scenario1-page .scenario,
+#scenario2-page .scenario {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background: #f1f8e9;
+    border: 1px solid #c5e1a5;
+    border-radius: 8px;
+    text-align: left;
+}
+
+#scenario1-page h2,
+#scenario2-page h2 {
+    color: #558b2f;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.card {
+    width: 50px;
+    height: 75px;
+    border: 2px solid #555;
+    margin: 5px;
+    background: #EA5F57;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.card.green {
+    background: #B0BD5E;
+    transform: scale(1.05);
+}
+
+.message {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #424242;
+}
+
+/* ------------------------------
+   Scenario Navigation
+   ------------------------------ */
+
+#scenario-nav {
+    margin-top: 20px;
+}
+
+#scenario-nav button {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.5rem;
+    padding: 25px 50px;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 0 10px;
+}
+
+#scenario-nav button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------------------
+   Animations and Modal Styles
+   ------------------------------ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.button-click {
+    animation: pop 0.2s ease;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#modal,
+#finalModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
+#modal-content,
+#finalModalContent {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 350px;
+    margin: 150px auto;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    #start-screen h1 {
+        font-size: 15vh;
+    }
+
+    .instruction-screen p {
+        font-size: 1.2rem;
+    }
+
+    #scenario1-page .scenario,
+    #scenario2-page .scenario {
+        width: 95%;
+    }
+}
+
+@media (max-width: 1024px) {
+    #instruction-nav button {
+        font-size: 2rem;
+        /* Reduce font size */
+        padding: 15px 30px;
+        /* Reduce padding */
+    }
+}
